@@ -1,0 +1,15 @@
+
+<div class="col-lg-4 col-sm-6 text-center" {{action "over" on="mouseEnter"}}>
+  <div {{action "out" on="mouseLeave"}}>
+    {{#if overDiv}}
+            You are over div now!
+    {{/if}}
+
+    <img class="img-circle img-responsive img-center" {{bind-attr src=image}} alt="">
+    <h3>{{name}}
+        <small>{{title}}</small>
+    </h3>
+    <a {{bind-attr href=twitter}}>Twitter</a>
+  </div>
+</div>
+

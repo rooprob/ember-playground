@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('solutions', { path: '/' });
+  this.resource('about-profile', { path: '/about' });
 });
 
 export default Router;
