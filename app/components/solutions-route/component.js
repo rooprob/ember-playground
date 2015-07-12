@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   store: service(),
 
-  all: computed(function(){
+  getSolutions: computed(function(){
     return this.get('solutions');
   }),
 

@@ -6,11 +6,10 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    return this.store.findAll('solution').then((solutions) => {
-      return {
-        all: solutions,
-        filter: params.state
-      };
-    });
+    var promises = {
+      all: this.store.findAll('solution'),
+      filter: params.state,
+    };
+    return Ember.RSVP.hash(promises) ;
   }
 });

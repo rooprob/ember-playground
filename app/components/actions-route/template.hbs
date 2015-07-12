@@ -1,0 +1,12 @@
+  <button type="button" {{bind-attr class=":btn solution.buttonClass"}}>Action</button>
+  <button type="button" {{bind-attr class=":btn solution.buttonClass :dropdown-toggle"}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    {{#each this.getActions as |item|}}
+    <li><a href="#">{{item.action}}</a></li>
+    {{/each}}
+  </ul>
+
