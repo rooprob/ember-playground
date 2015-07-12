@@ -12,6 +12,9 @@ var app = new EmberApp();
 app.import(app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js');
 app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
 app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap-theme.min.css');
+app.import(app.bowerDirectory + '/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', {
+  destDir: 'fonts'
+});
 
 //
 // If you need to use different assets in different

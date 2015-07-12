@@ -54,4 +54,13 @@ export default Ember.Component.extend({
     }
   }),
 
+  actions: {
+    runAction: function(action, solution) {
+      console.log("runAction for " + action + " with " + solution);
+    },
+    runSetting: function(setting, solution) {
+      console.log("runSetting for " + setting + " with " + solution);
+    },
+  }
+
 });

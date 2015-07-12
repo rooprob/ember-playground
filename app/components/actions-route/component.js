@@ -12,18 +12,55 @@ export default Ember.Component.extend({
   getActions: computed(function(){
     var solution = this.get('solution');
 
-    // compute state machine
+    // Compute state machine
     //
-    var states = Ember.Set.create();
+    // Ember.Set is deprecated, investigate new Set(), investigate how to keep
+    // {{#each}} template processor happy with an Array.
+    var states = new Ember.Set();
     states.add(Ember.Object.create({
-      action: "install"
+      action: 'install',
+      name: 'install solution',
+      disabled: 'disabled'
     }));
     states.add(Ember.Object.create({
-      action: "deploy"
+      action: "deploy",
+      name: 'deploy solution',
+      disabled: 'disabled'
     }));
     states.add(Ember.Object.create({
-      action: "backup"
+      action: "backup",
+      name: 'backup settings',
+      disabled: 'disabled'
+    }));
+    states.add(Ember.Object.create({
+      action: "activity",
+      name: 'view activity log',
     }));
     return states.toArray();
   }),
+
+  performInstallation: function() {
+
+  },
+
+  actions: {
+    install: function() {
+      var solution = this.get('solution').get('model');
+      console.log("action name is ");
+      console.log(this) ;
+      this.sendAction('action', 'install', this.get('solution'));
+    },
+    deploy: function() {
+      var solution = this.get('solution').get('model');
+      this.sendAction('action', 'deploy', this.get('solution'));
+    },
+    backup: function() {
+      var solution = this.get('solution').get('model');
+      this.sendAction('action', 'backup', this.get('solution'));
+    },
+    activity: function() {
+      var solution = this.get('solution').get('model');
+      this.sendAction('action', 'activity', this.get('solution'));
+    }
+  },
 });
