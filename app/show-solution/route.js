@@ -6,16 +6,12 @@ export default Ember.Route.extend({
   },
 
   model(params) {
+    console.log("show-solution: inside my route!!!!!!!!!");
+    console.log(params);
     var promises = {
-      all: this.store.findAll('solution'),
-      filter: params.state,
+      solution: this.store.find('solution', params.solution_id)
     };
     return Ember.RSVP.hash(promises) ;
   },
 
-  actions: {
-    runAction: function() {
-      console.log("runAction....");
-    },
-  },
 });

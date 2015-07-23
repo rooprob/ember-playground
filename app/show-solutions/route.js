@@ -1,21 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  queryParams: {
-    state: { refreshModel: true }
-  },
-
   model(params) {
+    console.log("show-solutions: inside my route!!!!!!!!!");
+    console.log(params);
     var promises = {
       all: this.store.findAll('solution'),
-      filter: params.state,
     };
     return Ember.RSVP.hash(promises) ;
-  },
-
-  actions: {
-    runAction: function() {
-      console.log("runAction....");
-    },
-  },
+  }
 });

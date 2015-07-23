@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
-var computed = Ember.computed
+var computed = Ember.computed;
 var service = Ember.inject.service;
 
 export default Ember.Component.extend({
 
   store: service(),
 
-  getSolutions: computed(function(){
+  solutions: computed(function(){
     return this.get('solutions');
   }),
 

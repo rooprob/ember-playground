@@ -11,22 +11,13 @@
   </div>
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-
-  {{#each mainNav as |item|}}
-  <li {{bind-attr class="item.active"}}>{{link-to item.title item.location}}</li>
-  {{/each}}
-
+      <li>{{#link-to 'show-solutions'}}Solution{{/link-to}}</li>
+      <li>{{#link-to 'about-profile'}}About{{/link-to}}</li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li class="dropdown-header">Nav header</li>
-          <li><a href="#">Separated link</a></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+
+        {{solutions-nav solutions=solutions}}
+
       </li>
     </ul>
   </div><!--/.nav-collapse -->
