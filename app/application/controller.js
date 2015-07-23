@@ -6,12 +6,6 @@ export default Ember.Controller.extend({
   state: 'all',
   queryParams: [
     'state',
-  ],
+  ]
 
-  actions: {
-    setActiveMenu: function(menu) {
-      this.set('activeMenu', menu);
-      console.log("set active menu to " + menu);
-    }
-  }
-})
+});

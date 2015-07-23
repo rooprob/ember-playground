@@ -40,28 +40,22 @@ export default Ember.Component.extend({
     return states.toArray();
   }),
 
-  performInstallation: function() {
-
-  },
+  action: false,
 
   actions: {
     install: function() {
-      var solution = this.get('solution').get('model');
-      console.log("action name is ");
-      console.log(this) ;
-      this.sendAction('action', 'install', this.get('solution'));
+      this.toggleProperty('action', 'install');
     },
     deploy: function() {
-      var solution = this.get('solution').get('model');
-      this.sendAction('action', 'deploy', this.get('solution'));
+      this.toggleProperty('action', 'deploy');
     },
     backup: function() {
-      var solution = this.get('solution').get('model');
-      this.sendAction('action', 'backup', this.get('solution'));
+      this.toggleProperty('action', 'backup');
     },
     activity: function() {
-      var solution = this.get('solution').get('model');
-      this.sendAction('action', 'activity', this.get('solution'));
+      this.toggleProperty('action', 'activity');
+      console.log("view activity log...");
+      this.sendAction('superAction','activity', this.get('solution'));
     }
   },
 });

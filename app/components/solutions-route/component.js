@@ -12,11 +12,9 @@ export default Ember.Component.extend({
   }),
 
   actions: {
-    triggerSync: function() {
-      alert('sync triggered');
+    superAction: function(params) {
+      this.sendAction('superAction', params);
     },
-    triggerInstallation: function() {
-      alert('installation triggered');
-    },
-  }
+  },
+
 })

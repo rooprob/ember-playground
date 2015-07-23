@@ -11,11 +11,5 @@ export default Ember.Route.extend({
       filter: params.state,
     };
     return Ember.RSVP.hash(promises) ;
-  },
-
-  actions: {
-    runAction: function() {
-      console.log("runAction....");
-    },
-  },
+  }
 });

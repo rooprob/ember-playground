@@ -8,5 +8,6 @@ export default Ember.Route.extend({
       all: this.store.findAll('solution'),
     };
     return Ember.RSVP.hash(promises) ;
-  }
+  },
+
 });
