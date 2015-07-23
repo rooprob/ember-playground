@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import EmberSet from 'ember-cli-set-replacement';
 
 var computed = Ember.computed;
 var service = Ember.inject.service;
@@ -16,7 +17,7 @@ export default Ember.Component.extend({
     //
     // Ember.Set is deprecated, investigate new Set(), investigate how to keep
     // {{#each}} template processor happy with an Array.
-    var states = new Ember.Set();
+    var states = new EmberSet();
     states.add(Ember.Object.create({
       action: "configure"
     }));
